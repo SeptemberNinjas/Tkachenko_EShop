@@ -8,5 +8,6 @@ namespace Core.SaleItems
 {
     internal class Service : SaleItem
     {
+
     }
 }
