@@ -12,10 +12,11 @@ namespace EShop
 
     public class DysplayCommandCommander
     {
-        public static string GetInfo() {
+        public static string GetInfo()
+        {
             return CommandsCommander.Name;
         }
-        
+
         public static void Execute(string command)
         {
             var commands = new List<string>();
@@ -37,6 +38,13 @@ namespace EShop
 
                     foreach (var product in products)
                         Console.WriteLine(product.Info());
+
+                    break;
+                case GetService.Name:
+                    var services = GetService.Execute();
+
+                    foreach (var service in services)
+                        Console.WriteLine(service.Info());
 
                     break;
                 default:
