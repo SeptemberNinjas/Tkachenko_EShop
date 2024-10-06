@@ -4,7 +4,19 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            SayWalcome();
+
+            while (true)
+            {
+
+                Console.WriteLine();
+
+            }
+        }
+
+        private static void SayWalcome()
+        {
+            Console.WriteLine("Добро пожаловать");
         }
     }
 }
