@@ -15,6 +15,7 @@
 
             commands.Add($"{Name} - {GetInfo()}");
             commands.Add($"{ExitCommand.Name} - {ExitCommand.GetInfo()}");
+            commands.Add($"{GetProducts.Name} - {GetProducts.GetInfo()}");
 
             return commands;
         }

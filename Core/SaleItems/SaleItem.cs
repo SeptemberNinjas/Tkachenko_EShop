@@ -10,7 +10,13 @@ namespace Core.SaleItems
     {
         string name { get; set; }
         int id { get; set; }
-        float price { get; set; }
+        int price { get; set; }
 
+        public SaleItem(string name, int id, int price = 1000)
+        {
+            this.name = name;
+            this.id = id;
+            this.price = price;
+        }
     }
 }

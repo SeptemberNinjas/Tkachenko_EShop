@@ -18,10 +18,12 @@ namespace EShop
         
         public static void Execute(string command)
         {
+            var commands = new List<string>();
+
             switch (command)
             {
                 case CommandsCommander.Name:
-                    var commands = CommandsCommander.Execute();
+                    commands = CommandsCommander.Execute();
 
                     foreach (var commandInfo in commands)
                         Console.WriteLine(commandInfo);
@@ -30,8 +32,22 @@ namespace EShop
                 case ExitCommand.Name:
                     ExitCommand.Execute();
                     break;
+                case GetProducts.Name:
+                    var products = GetProducts.Execute();
+
+                    foreach (var product in products)
+                        Console.WriteLine(product.Info());
+
+                    break;
                 default:
                     Console.WriteLine("Ошибка: неизвестная команда");
+                    Console.WriteLine("Доступные команда");
+
+                    commands = CommandsCommander.Execute();
+
+                    foreach (var commandInfo in commands)
+                        Console.WriteLine(commandInfo);
+
                     break;
             }
         }

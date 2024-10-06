@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.SaleItems
 {
-    internal class Service : SaleItem
+    internal class Service
     {
 
     }
