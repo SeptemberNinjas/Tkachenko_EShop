@@ -18,5 +18,10 @@ namespace Core.SaleItems
             this.id = id;
             this.price = price;
         }
+
+        public string Info()
+        {
+            return $"Товар: {name} ({id}). Цена: {price}";
+        }
     }
 }
