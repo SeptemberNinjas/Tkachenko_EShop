@@ -6,22 +6,17 @@ using System.Threading.Tasks;
 
 namespace Core.SaleItems
 {
-    public class Service
+    public class Service : SaleItem
     {
-        string Name { get; set; }
-        int Id { get; set; }
-        int Price { get; set; }
-
         public Service(string name, int id, int price = 1000)
+            : base(name, id, price)
         {
-            this.Name = name;
-            this.Id = id;
-            this.Price = price;
+            
         }
 
         public string Info()
         {
-            return $"Товар: {Name} ({Id}). Цена: {Price}";
+            return $"Товар: {name} ({id}). Цена: {price}";
         }
     }
 }

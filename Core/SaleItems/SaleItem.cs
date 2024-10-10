@@ -8,11 +8,11 @@ namespace Core.SaleItems
 {
     public class SaleItem
     {
-        string name { get; set; }
-        int id { get; set; }
-        int price { get; set; }
+        internal string name { get; set; }
+        internal int id { get; set; }
+        internal int price { get; set; }
 
-        public SaleItem(string name, int id, int price = 1000)
+        public SaleItem(string name, int id, int price)
         {
             this.name = name;
             this.id = id;

@@ -6,23 +6,19 @@ using System.Threading.Tasks;
 
 namespace Core.SaleItems
 {
-    public class Product
+    public class Product : SaleItem
     {
-        string Name { get; set; }
-        int Id { get; set; }
-        int Price { get; set; }
-        int Balanse { get; set; }
+        int balanse { get; set; }
 
-        public Product(string name, int id, int price = 1000)
+        public Product (string name, int id, int price = 1000)
+            : base (name, id, price)
         {
-            this.Name = name;
-            this.Id = id;
-            this.Price = price;
-            this.Balanse = 10;
+            
+            balanse = 10;
         }
 
         public string Info() {
-            return $"Товар: {Name} ({Id}), доступен в количестве: {Balanse}. Цена: {Price}";
+            return $"Товар: {name} ({id}), доступен в количестве: {balanse}. Цена: {price}";
         }
 
     }
