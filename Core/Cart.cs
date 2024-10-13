@@ -26,7 +26,7 @@ namespace Core
                 cartSum += item.price;
             }
 
-            data.Add("Итоговая сумма корзины: " + cartSum));
+            data.Add("Итоговая сумма корзины: " + cartSum);
 
             return data;
         }
