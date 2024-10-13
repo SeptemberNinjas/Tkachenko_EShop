@@ -4,7 +4,32 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            SayWalcome();
+
+            while (true)
+            {
+                Console.Write("Введите команду:");
+                var command = GetCommand();
+                DysplayCommandCommander.Execute(command);
+            }
+        }
+
+        private static void SayWalcome()
+        {
+            Console.WriteLine("Добро пожаловать");
+        }
+
+        private static string GetCommand()
+        {
+            var command = Console.ReadLine();
+
+            while (string.IsNullOrEmpty(command))
+            {
+                Console.WriteLine("Некорректный ввод команды. Для отображения всех комманд используйте " + DysplayCommandCommander.GetInfo());
+                command = Console.ReadLine();
+            }
+
+            return command;
         }
     }
 }
