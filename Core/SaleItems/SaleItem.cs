@@ -8,8 +8,8 @@ namespace Core.SaleItems
 {
     public class SaleItem
     {
-        string name { get; set; }
-        int id { get; set; }
+        string name { get; }
+        int id { get; }
         int price { get; set; }
 
         public SaleItem(string name, int id, int price = 1000)

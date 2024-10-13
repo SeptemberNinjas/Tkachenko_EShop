@@ -23,7 +23,7 @@
         {
             var command = Console.ReadLine();
 
-            while (command == null)
+            while (string.IsNullOrEmpty(command))
             {
                 Console.WriteLine("Некорректный ввод команды. Для отображения всех комманд используйте " + DysplayCommandCommander.GetInfo());
                 command = Console.ReadLine();
