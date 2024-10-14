@@ -18,7 +18,7 @@ namespace Core.SaleItems
         }
 
         public string Info() {
-            return $"Товар: {name} ({id}), доступен в количестве: {balanse}. Цена: {price}";
+            return $"Товар: {Name} ({Id}), доступен в количестве: {balanse}. Цена: {Price}";
         }
 
     }

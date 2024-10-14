@@ -26,5 +26,22 @@ namespace Core
                 }
             }
         }
+
+        public static string GetString()
+        {
+            while (true)
+            {
+                string input = Console.ReadLine();
+
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Некорректный ввод. Пожалуйста, введите корректную строку.");
+                }
+                else
+                {
+                    return input;
+                }
+            }
+        }
     }
 }
