@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using eshop.Core;
+using eshop.Core.SaleItems;
 
 namespace eshop.Commands;
 

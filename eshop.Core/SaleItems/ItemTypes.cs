@@ -1,4 +1,4 @@
-namespace eshop.Core;
+namespace eshop.Core.SaleItems;
 
 /// <summary>
 /// Типы элементов в корзине
@@ -9,7 +9,7 @@ public enum ItemTypes
     /// Товар
     /// </summary>
     Product,
-    
+
     /// <summary>
     /// Услуга
     /// </summary>

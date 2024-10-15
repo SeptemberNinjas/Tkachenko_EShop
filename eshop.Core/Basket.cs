@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using eshop.Core.SaleItems;
 
 namespace eshop.Core;
 
@@ -7,7 +8,7 @@ namespace eshop.Core;
 /// </summary>
 public class Basket
 {
-    private readonly List<ItemsListLine<SaleItem>> _lines = new ();
+    private readonly List<ItemsListLine> _lines = new ();
 
     /// <summary>
     /// Добавить товар в корзину
@@ -82,7 +83,7 @@ public class Basket
         return result.ToString();
     }
 
-    private bool IsLineExists(SaleItem saleItem, out ItemsListLine<SaleItem> line)
+    private bool IsLineExists(SaleItem saleItem, out ItemsListLine line)
     {
         foreach (var ln in _lines)
         {

@@ -1,11 +1,13 @@
-﻿namespace eshop.Core;
+﻿using eshop.Core.SaleItems;
+
+namespace eshop.Core;
 
 /// <summary>
 /// Линия списка торговой единицы
 /// </summary>
-public class ItemsListLine<T> where T : SaleItem
+public class ItemsListLine
 {
-    private readonly T _lineItem;
+    private readonly SaleItem _lineItem;
     private int _count;
 
     /// <summary>
@@ -34,9 +36,11 @@ public class ItemsListLine<T> where T : SaleItem
     public decimal LineSum => (_lineItem?.Price ?? 0) * Count;
 
     /// <inheritdoc cref="ItemsListLine"/>
-    public ItemsListLine(T lineItem, int requestedCount)
+    public ItemsListLine(SaleItem lineItem, int requestedCount)
     {
         _lineItem = lineItem;
         Count = requestedCount;
     }
+
+    public ItemsListLine(SaleItem lineItem) : this(lineItem, 1) { }
 }

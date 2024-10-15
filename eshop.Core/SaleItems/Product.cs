@@ -1,4 +1,4 @@
-﻿namespace eshop.Core;
+﻿namespace eshop.Core.SaleItems;
 
 /// <summary>
 /// Товар
