@@ -1,35 +1,40 @@
-﻿namespace EShop
+﻿namespace eshop;
+
+public static class Program
 {
-    internal class Program
+    private static readonly ApplicationContext App = new ();
+    
+    public static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            SayWalcome();
+        Console.WriteLine(ApplicationContext.Title);
+        var output = App.ExecuteStartupCommand();
+        Console.WriteLine(output);
 
-            while (true)
-            {
-                Console.Write("Введите команду:");
-                var command = GetCommand();
-                DysplayCommandCommander.Execute(command);
-            }
-        }
-
-        private static void SayWalcome()
+        while (true)
         {
-            Console.WriteLine("Добро пожаловать");
-        }
-
-        private static string GetCommand()
-        {
+            Console.WriteLine("Выполните команду");
             var command = Console.ReadLine();
-
-            while (string.IsNullOrEmpty(command))
-            {
-                Console.WriteLine("Некорректный ввод команды. Для отображения всех комманд используйте " + DysplayCommandCommander.GetInfo());
-                command = Console.ReadLine();
-            }
-
-            return command;
+            Execute(command);
         }
+    }
+
+    private static void Execute(string command)
+    {
+        if (string.IsNullOrEmpty(command))
+        {
+            Console.WriteLine("Ошибка: неизвестная команда");
+            return;
+        }
+        
+        var commandNameWithArgs = command.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        var commandName = commandNameWithArgs[0];
+        var args = new string[commandNameWithArgs.Length - 1];
+        for (var i = 0; i < args.Length; i++)
+        {
+            args[i] = commandNameWithArgs[i + 1];
+        }
+
+        var output = App.ExecuteCommandByName(commandName, args);
+        Console.WriteLine(output);
     }
 }
